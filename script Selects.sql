@@ -49,6 +49,14 @@ CREATE TABLE localizacao (
 idLocalizacao INT PRIMARY KEY auto_increment,
 nome VARCHAR(45)
 );
+INSERT INTO localizacao VALUES
+(null,'Serpent Treasure Island'),
+(null,'Ilha dos Ventos Sussurrantes'),
+(null,'Ilha das Chamas Eternas'),
+(null,'Ilha da Caveira Negra'),
+(null,'Forgotten Wreck Island'),
+(null,'Ilha da Lua Prateada'),
+(null,'Ilha do Abismo Profundo');
 
 -- NAVIO É COMPOSTO POR UMA E SOMENTE UMA TRIPULAÇÃO E UMA TRIPULAÇÃO SO PODE PERTENCER A UM NAVIO,
 -- UM VAIO PODE TER UMA ALIANÇA COM OUTROS NAVIOS
