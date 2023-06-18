@@ -12,6 +12,7 @@ INSERT INTO Tripulacao VALUES
 (1, 'Tripulação do Pérola Negra'),
 (2, 'Tripulação do Vingança da Rainha'),
 (3, 'Tripulação do Espírito Vingativo');
+SELECT * FROM navio where fkTripulacao = 3 ;
 
 CREATE TABLE pirata (
 idPirata INT primary key AUTO_INCREMENT,
@@ -42,7 +43,7 @@ INSERT INTO pirata VALUES
        (null, 'Magnus Bloodfang', 'Tratar feridas, Manipulação ','Cozinheiro',2),
        (null, 'Seraphina Darkwater', 'Atiradora, Estrategista','Mestre de Armas',2);
        
-       
+      
 INSERT INTO pirata VALUES
 -- TRIPULACAO 3
 		(null, 'Davy Jones', 'Liderança, Estratégia','Capitão',3),
@@ -76,15 +77,24 @@ fkLocalizacao INT,
 constraint fkLocalTesouro foreign key(fkLocalizacao) references localizacao(idLocalizacao)
 );
 
-INSERT INTO Tesouro VALUES 
+INSERT INTO tesouro VALUES 
 (1,'A Lágrima do Kraken', 15615.85,4),
 (2,'One Piece', 456212.69, 1),
 (3,'O Colar das Marés Encantadas', 2852634.12, 6);
+
+INSERT INTO tesouro VALUES
+(4,'A Lenda do Diamante dos Sete Mares',9078900.98,3),
+(5,'A Riqueza do Naufrágio do Navio Fantasma',1239901.17,1),
+(6,'A Joia do Oceano Infinito',398700,2),
+(7,'Esmeralda do Mar Profundo',140123000,4),
+(8,'O Baú do Capitão Tempestade',40928746,4);
+
 
 
 -- NAVIO É COMPOSTO POR UMA E SOMENTE UMA TRIPULAÇÃO E UMA TRIPULAÇÃO SO PODE PERTENCER A UM NAVIO,
 -- UM VAIO PODE TER UMA ALIANÇA COM OUTROS NAVIOS
 CREATE TABLE navio(
+
 idNavio INT primary key auto_increment,
 nome VARCHAR (45),
 tipo VARCHAR(45),
@@ -99,6 +109,10 @@ INSERT INTO Navio VALUES
 (2, 'Vingança da Rainha', 'Galeão',2,6),
 (3, 'Holandês Voador', 'Navio Fantasma',3,1);
 
+SELECT * From navio ;
+
+
+
 -- TABELA ASSOCIATIVA entre Navios
 CREATE TABLE alianca (
 idAlianca INT AUTO_INCREMENT,
@@ -112,3 +126,15 @@ primary key(idAlianca,fkNavio1,fkNavio2)
 INSERT INTO Alianca VALUES 
 (NULL, 1, 2),
 (NULL, 2, 3);
+
+
+SELECT * FROM navio;
+SELECT * FROM alianca;
+SELECT * FROM Localizacao;
+SELECT * FROM tesouro;
+SELECT * FROM pirata;
+SELECT * FROM tripulacao;
+
+
+
+
